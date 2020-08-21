@@ -1,3 +1,5 @@
+<!-- Script -->
+  <script src="{% link assets/js/sidebar.js %}" type="text/javascript"></script>
 <!-- Sidebar -->
   <div id="sidebar">
     <div class="inner">
@@ -16,17 +18,17 @@
           </header>
           <ul>
             <li><a href="{{ '' | absolute_url }}">Homepage</a></li>
-            <li><a href="{{ 'generic.html' | absolute_url }}">Generic</a></li>
-            <li><a href="{{ 'elements.html' | absolute_url }}">Elements</a></li>
+            <li><a href="{{ 'whoami.html' | absolute_url }}">Whoami</a></li>
             <li>
-              <span class="opener">Submenu</span>
+              <span class="opener">Recruiters' Corner</span>
               <ul>
-                <li><a href="#">Lorem Dolor</a></li>
-                <li><a href="#">Ipsum Adipiscing</a></li>
-                <li><a href="#">Tempus Magna</a></li>
-                <li><a href="#">Feugiat Veroeros</a></li>
+                <li><a href="/rcorner/portfolio.html">Portfolio</a></li>
+                <li><a href="/rcorner/projects.html">Projects</a></li>
+                <li><a href="/rcorner/teaching.html">Teaching</a></li>
+                <li><a href="/rcorner/resume.html">Resume</a></li>
               </ul>
             </li>
+            <li><a href="{{ 'elements.html' | absolute_url }}">Blog Posts</a></li>
             <li><a href="#">Etiam Dolore</a></li>
             <li><a href="#">Adipiscing</a></li>
             <li>
@@ -51,15 +53,15 @@
           </header>
           <div class="mini-posts">
             <article>
-              <a href="#" class="image"><img src="assets/images/pic07.jpg" alt="" /></a>
+              <a href="#" class="image"><img src="/assets/images/pic07.jpg" alt="" /></a>
               <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
             </article>
             <article>
-              <a href="#" class="image"><img src="assets/images/pic08.jpg" alt="" /></a>
+              <a href="#" class="image"><img src="/assets/images/pic08.jpg" alt="" /></a>
               <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
             </article>
             <article>
-              <a href="#" class="image"><img src="assets/images/pic09.jpg" alt="" /></a>
+              <a href="#" class="image"><img src="/assets/images/pic09.jpg" alt="" /></a>
               <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
             </article>
           </div>
@@ -73,19 +75,21 @@
           <header class="major">
             <h2>Get in touch</h2>
           </header>
-          <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+          <p>I prefer to use email as the primary means of communication. Please feel free to reach out. I am 
+          always hungry for interesting conversations!</p>
           <ul class="contact">
-            <li class="fa-envelope-o"><a href="#">{{ site.email }}</a></li>
-            <li class="fa-phone">{{ site.phone }}</li>
-            <li class="fa-home">{{ site.street_address }}<br />
-            {{ site.city }}, {{ site.state }} {{ site.zip_code }}<br />
-            {{ site.country }}</li>
+
+            <li class="fa-envelope-o"><a>{{ site.email }}</a> &nbsp &nbsp
+            <a class="button small" onclick="copyTextToClipboard('{{ site.email }}')">Copy</a></li>
+            <li class="fa-home">{{ site.street_address }}, {{ site.country }} </li>
+            <li class="fa-home">Lahore, Pakistan</li>
           </ul>
         </section>
 
       <!-- Footer -->
         <footer id="footer">
-          <p class="copyright">&copy; {{ site.title }}. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>. Jekyll integration: <a href="https://andrewbanchi.ch">Andrew Banchich</a>.</p>
+          <p class="copyright">&copy; Khizar Anjum, 2020. All rights reserved. </p>
+          <p class="copyright"> Design: <a href="https://html5up.net">HTML5 UP</a>. Jekyll integration by <a href="https://github.com/andrewbanchich">Andrew Banchich</a>.</p>
         </footer>
 
     </div>

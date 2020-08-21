@@ -1,29 +1,35 @@
 # Site settings
-title: Editorial
-subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
-description: A FREE AND FULLY RESPONSIVE SITE TEMPLATE
-baseurl: "/editorial-jekyll-theme" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
+title:  Welcome to my abode
+subtitle: on the world wide web
+email: khizaranjum28 AT gmail 
+description: A place where I share myself with the world
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://10.42.0.1:4000" # the base hostname & protocol for your site
+host: "10.42.0.1"
+author: Khizar
+street_address: Greater New York City Area
+#city: Nashville
+#state: TN
+#zip_code: 55555
 country: United States of America
-phone: (716) 555-5555
+#phone: (716) 555-5555
 
 # Social settings
 500px_url:
 facebook_url:
-github_url:
-gitlab_url: https://gitlab.com/u/andrewbanchich
-googleplus_url: https://plus.google.com/u/0/+AndrewBanchich
-instagram_url: https://instagram.com
-linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
+github_url: https://github.com/khizar-anjum
+gitlab_url: 
+googleplus_url: 
+instagram_url: https://instagram.com/khizaranjum28
+linkedin_url: https://www.linkedin.com/in/khizar-anjum
 pinterest_url:
-slack_url:
-twitter_url: https://twitter.com/andrewbanchich
+slack_url: 
+twitter_url: https://twitter.com/theselfishjeans
 
 # Build settings
 markdown: kramdown
+
+collections:
+  rcorner:
+    output: true
+    permalink: /:collection/:path/
