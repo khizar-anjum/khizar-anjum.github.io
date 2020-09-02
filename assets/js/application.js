@@ -28,3 +28,12 @@ jQuery(document).ready(function() {
 		});
 	});
 });
+
+// Downloader
+function downloadfile(url, filename){
+	var anchor = document.createElement('a');
+	anchor.href = url;
+	anchor.target = '_blank';
+	anchor.download = filename;
+	anchor.click();
+}

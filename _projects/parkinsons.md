@@ -3,6 +3,9 @@ permalink: /projects/parkinsons.html
 layout: page
 title: Deep Neural Networks for Early Diagnosis of Parkinson’s Disease
 collection: projects
+poster: /assets/images/eam.png
+summary: A project I conducted to design a deep neural network which is better at the diagnosis of Parkinson's on a crowd-sourced dataset. 
+date: 2019-05-01
 ---
 
 <style>
@@ -28,11 +31,19 @@ Introduction
 ------
 We are working towards early diagnosis of Parkinson’s disease (PD). It affects more than 6 million people worldwide and is the second most common neurodegenerative disease after Alzheimer’s disease. There are a myriad number of symptoms for Parkinson's and these symptoms of PD progressively worsen over time, leading to a stark loss in quality of life, and a significant reduction in life expectancy. A detailed account of the Parkinson's symptoms is shown in Figure below.
 <center>
-	<img src="/assets/images/park_symp.jpg">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_symp.jpg" alt=""/>
+		</span>
+	</div>
 </center>
 Receiving a timely and accurate diagnosis is paramount for patients because access to treatments could improve their quality of life [[10]](#10). So far, the traditional methods of diagnosing PD are based on subjective clinical assessments of patient’s symptoms. However, research has shown that around 25% of this diagnosis are incorrect when compared to the results of post-mortem autopsy [[9]](#9). These diagnoses are difficult because there are other diseases that may appear similar to PD and symptom severity may fluctuate over time [[9]](#9). Adding to that, patients In this project, we explore the possibility of using smartPhone data collected by SageBionetworks, and made public under the umbrella of mPower study, to diagnose people with PD [[2]](#2). Such an approach frees the diagnosis process from sporadic clinical trials and gives one the ability to do it anytime one wants. Also, this lets us explore the possibility of using deep-learning models for diagnosis task, which may improve significantly on the previous results.
 <center>
-	<img style="width:100%" src="/assets/images/park_dnn.png">
+	<div class="10u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_dnn.png" alt=""/>
+		</span>
+	</div>
 </center>
 The model that we propose for the detection for the early diagnosis of Parkinson's is to optimize a Deep Learning Model that takes in data from Smartphone (Here we use the data already collected under the mPower study) and makes predictions based on this data input as shown in Figure above.
 
@@ -50,7 +61,11 @@ Traditional methods for Parkinson's diagnosis involve a subjective clinical diag
 Then we replace those networks with more sophisticated Deep Learning Models and improve upon those results.
 After that, we move towards End-to-End Deep Learning which removes all the steps required to prepare features for input to our model.
 <center>
-	<img style="width:50%" src="/assets/images/park_method.png">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_method.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Simulation Setup
@@ -68,25 +83,41 @@ The mPower data [[2]](#2) is consists of four types of activities: Walking, Voic
 * **Memory**: Subjects play a guessing game. In this game, the results of pattern matching are recorded. This activity is intended to capture if the memory is in good shape since one of the symptoms of Parkinson's is loss of memory.
 
 <center>
-	<img src="/assets/images/mpower_data.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/mpower_data.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Structure of Voice Data
 ------
 The voice data contains 65,022 audio files in total which are organized on the basis of the time of their recording as illustrated by Figure below. We ignored the recordings of Parkinson's patients done just after medication, as we believe that those recordings would not provide information about Parkinson's symptoms as Parkinson's medications, suppress these symptoms [[1]](#1).
 <center>
-	<img src="/assets/images/park_time.png" style="width: 30%">
+	<div class="4u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_time.png" alt=""/>
+		</span>
+	</div>
 </center>
 However, the data available to us is imbalanced in terms of the number of people participating in the study. We observe that only 20% of the people are clinically diagnosed by Parkinson's Disease, while an overwhelming 58% of the recordings are attributed to that 20% of the people. This means that on average, people with Parkinson's have recorded more audio files as compared to Healthy people as illustrated in Figure below.
 <center>
-  <img src="/assets/images/park_dist.png">
+	<div class="6u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_dist.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Initial Investigation with Machine Learning Models
 ------
 Initially, we assumed every recording sample independent of each other and designed a recording-level classifier. The pipeline designed for such a classifier is illustrated in Figure below.
 <center>
-	<img src="/assets/images/park_pipeline.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_pipeline.png" alt=""/>
+		</span>
+	</div>
 </center>
 The following features were used for training these classifiers:
 * Detrended fluctuation analysis [[3]](#3)
@@ -94,7 +125,11 @@ The following features were used for training these classifiers:
 * Mel-Frequency Cepstal Co-efficients [[3]](#3)
 By training these classifiers, we were able to achieve an Area Under Curve measure of 0.88 as illustrated in Figure below, but our assumptions were wrong are there was high correlation present between two  audio-files recorded by the same patient and treating them as independent was misleading.
 <center>
-	<img src="/assets/images/park_ini_res.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_ini_res.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Selection of a Fixed Number of Recordings per Person
@@ -103,7 +138,11 @@ After the correction of our assumption of independence, we limited all the recor
 
 The contribution of recordings by different people is very asymmetric. Some people have too many recordings, some too few. This causes a bias when training a recording level classifier as well as a person level classifier. As shown in Figure below, we see that the mode number of recordings is 3. Almost 31% of the people have done 3 recordings, and the mean number of recordings is 11.57. 
 <center>
-	<img src="/assets/images/park_asymm.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_asymm.png" alt=""/>
+		</span>
+	</div>
 </center>
 Therefore, we devise a policy of selecting a fixed number (let's say $k$) of recordings per person. This is done for the following reasons:
 * People with lesser number of recordings become under-represented and provide us very less information.
@@ -114,21 +153,37 @@ Spline Convolutional Neural Network Architecture
 ------
 We use a deep neural network architecture [[4]](#4) to classify the recordings because this architecture was designed to detect and learn features for audible data. The detailed structure for such an architecture is given in Figure below.
 <center>
-	<img src="/assets/images/spline_cnn.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/spline_cnn.png" alt=""/>
+		</span>
+	</div>
 </center>
 The spline CNNs are a special form of regular CNNs with the change that convolutional filters are initialized as band-limited filters with several center frequencies covering the whole Frequency-space. The CNN is called spline CNN because Hermite-cubic splines are used for filter construction. The filters are constructed by first designing 1 'mother-filter' in Frequency Domain and then shifting it to cover the whole Frequency range. In our case, we use a filter of 100 Hz Bandwidth and shift it with a frequency of $\sim$10 Hz to make 200 band-limited filters. The sampling frequency we use is 2205 Hz. These 200 filters are initialized as convolutional filters in our network and then learned as we train the network. For illustration, two sample filters out of the 200 filters have been shown in Figure below.
 <center>
-	<img src="/assets/images/park_filter.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/park_filter.png" alt=""/>
+		</span>
+	</div>
 </center>
 Evidence Aggregation Model (EAM)
 ------
 We introduced another Deep Learning Model into our pipeline to output a final prediction for each person based upon their predictions from the recording-based classifier. This updates our pipeline to the one shown in Figure above.
 <center>
-	<img src="/assets/images/new_pipe.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/new_pipe.png" alt=""/>
+		</span>
+	</div>
 </center>
 EAM is implemented as a Deep Bi-directional LSTM network, as shown in Figure below. The work of EAM was to aggregate results from more than one models as we move towards other activities as well. However, for this setting, where we are only working with the voice data, the EAM converges to mode function.
 <center>
-	<img src="/assets/images/eam.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/eam.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Results 
@@ -138,34 +193,47 @@ We compare our results to the state-of-the-art work on the same dataset by P.Sch
 Results using Random Forest
 ------
 After the correction of our independence assumption, we were able to improve upon the reported result by using more robust hand-crafted features as shown in Figure below. Using Random Forest with EAM, improved our results to an AUC of 0.76 in comparison of 0.56 obtained by P.Schwab [[1]](#1) on Voice Data as shown in Figure below.
- <div class="row">
-  <div class="column">
-    <img src="/assets/images/first_res.png" alt="first_rse" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="/assets/images/second_res.png" alt="second_res" style="width:100%">
-  </div>
-</div> 
+
+<div class="row 50% uniform">
+	<div class="6u 12">
+		<span class="image fit">
+			<img src="/assets/images/first_res.png" alt=""/>
+		</span>
+	</div>
+	<div class="6u 12">
+		<span class="image fit">
+			<img src="/assets/images/second_res.png" alt=""/>
+		</span>
+	</div>		
+</div>
 
 Results using Spline CNN
 ------
 The next logical step was to replace recording-level with a CNN to skip the pre-processing and feature Extraction step. This improved our measure to an AUC ROC of 0.89 with EAM for 3 recordings per patient as shown in Figure below.
 <center>
-	<img src="/assets/images/third_res.png" style="width: 70%">
+	<div class="8u 12">
+		<span class="image fit">
+			<img src="/assets/images/third_res.png" alt=""/>
+		</span>
+	</div>
 </center>
 
 Results Using Different Values of Recordings per Person
 ------
 The number of recordings per person were also changed and the results were recorded. As we can see that this change does not affect the performance very significantly,yet maximum performance was obtained at 3 recordings per person as shown in Figure below. The data composition was also changed when we changed the number of recordings per person which is illustrated in Figure below.
- <div class="row">
-  <div class="column">
-    <img src="/assets/images/fourth_rse.png" alt="fourth_rse" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="/assets/images/fifth_res.png" alt="fifth_res" style="width:100%">
-  </div>
-</div> 
 
+<div class="row 50% uniform">
+	<div class="6u 12">
+		<span class="image fit">
+			<img src="/assets/images/fourth_rse.png" alt=""/>
+		</span>
+	</div>
+	<div class="6u 12">
+		<span class="image fit">
+			<img src="/assets/images/fifth_res.png" alt=""/>
+		</span>
+	</div>		
+</div>
 
 References
 ------

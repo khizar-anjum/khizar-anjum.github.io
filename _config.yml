@@ -4,8 +4,9 @@ subtitle: on the world wide web
 email: khizaranjum28 AT gmail 
 description: A place where I share myself with the world
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://10.42.0.1:4000" # the base hostname & protocol for your site
-host: "10.42.0.1"
+# url: "http://10.42.0.1:4000" # development url
+url: "https://khizar-anjum.github.io" # the base hostname & protocol for your site
+#host: "10.42.0.1"
 author: Khizar
 street_address: Greater New York City Area
 #city: Nashville
@@ -34,5 +35,8 @@ collections:
     output: true
     permalink: /:collection/:path/
   projects:
+    output: true
+    permalink: /:collection/:path/
+  gi:
     output: true
     permalink: /:collection/:path/

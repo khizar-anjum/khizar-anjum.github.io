@@ -5,12 +5,14 @@
     <div class="inner">
 
       <!-- Search -->
+      <!--
         <section id="search" class="alt">
           <form method="post" action="#">
             <input type="text" name="query" id="query" placeholder="Search" />
           </form>
         </section>
-
+      -->
+      
       <!-- Menu -->
         <nav id="menu">
           <header class="major">
@@ -19,54 +21,39 @@
           <ul>
             <li><a href="{{ '' | absolute_url }}">Homepage</a></li>
             <li><a href="{{ 'whoami.html' | absolute_url }}">Whoami</a></li>
+            <!--
             <li>
-              <span class="opener">Recruiters' Corner</span>
+              <span class="opener">Professional History</span>
               <ul>
-                <li><a href="/rcorner/portfolio.html">Portfolio</a></li>
+                <li><a href="/rcorner/portfolio.html">Portfolio</a></li> 
                 <li><a href="/rcorner/projects.html">Projects</a></li>
                 <li><a href="/rcorner/teaching.html">Teaching</a></li>
-                <li><a href="/rcorner/resume.html">Resume</a></li>
               </ul>
             </li>
-            <li><a href="{{ 'elements.html' | absolute_url }}">Blog Posts</a></li>
-            <li><a href="#">Etiam Dolore</a></li>
-            <li><a href="#">Adipiscing</a></li>
-            <li>
-              <span class="opener">Another Submenu</span>
-              <ul>
-                <li><a href="#">Lorem Dolor</a></li>
-                <li><a href="#">Ipsum Adipiscing</a></li>
-                <li><a href="#">Tempus Magna</a></li>
-                <li><a href="#">Feugiat Veroeros</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Maximus Erat</a></li>
-            <li><a href="#">Sapien Mauris</a></li>
-            <li><a href="#">Amet Lacinia</a></li>
+            -->
+            <li><a href="/rcorner/projects.html">Projects</a></li>
+            <li><a href="/rcorner/teaching.html">Teaching</a></li>
+            <li><a href="{{ 'gi.html' | absolute_url }}">Generally Intelligent</a></li>
           </ul>
         </nav>
 
       <!-- Section -->
         <section>
           <header class="major">
-            <h2>Ante interdum</h2>
+            <h2>Newest Posts</h2>
           </header>
           <div class="mini-posts">
-            <article>
-              <a href="#" class="image"><img src="/assets/images/pic07.jpg" alt="" /></a>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-            </article>
-            <article>
-              <a href="#" class="image"><img src="/assets/images/pic08.jpg" alt="" /></a>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-            </article>
-            <article>
-              <a href="#" class="image"><img src="/assets/images/pic09.jpg" alt="" /></a>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-            </article>
+            {% assign sorted_posts = site.gi | sort:"date" | reverse %}
+            {%for i in (0..0) %}
+              {% assign post = sorted_posts[i] %}
+              <article>
+                <a href="{{post.permalink}}" class="image"><img src="{{post.poster}}" alt="" /></a>
+                <h3 >{{post.title}}</h3>
+              </article>
+            {%endfor%}
           </div>
           <ul class="actions">
-            <li><a href="#" class="button">More</a></li>
+            <li><a href="/gi.html" class="button">More</a></li>
           </ul>
         </section>
 

@@ -3,6 +3,9 @@ permalink: /projects/signature.html
 layout: page
 title: Signature Extraction from Documents using CNNs
 collection: projects
+poster: /assets/images/signature-title.jpeg
+summary: Used the basics of Computer vision techniques in conjunction with Siamese Neural Networks to extract and verify signatures from documents.
+date: 2019-08-01
 ---
 
 

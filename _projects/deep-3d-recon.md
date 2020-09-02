@@ -3,6 +3,9 @@ permalink: /projects/deep-3d-recon.html
 layout: page
 title: Deep Multi-Agent RL for 3D reconstruction 
 collection: projects
+poster: /assets/images/drone.png
+summary: A fun project comprising of drones using Reinforcement Learning (RL) to map an object in 3D space while working in coordination.
+date: 2019-10-01
 ---
 
 <style>
