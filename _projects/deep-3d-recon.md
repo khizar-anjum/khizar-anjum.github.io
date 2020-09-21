@@ -21,7 +21,7 @@ date: 2019-10-01
 
 TL;DR
 ------
-This project is about using drones (small portable machines) to map an object, while working in coordination. Working together, reinforcement learning is used to autonomously instruct drones to prioritize areas unexplored by other drones. In this way, more even coverage of the object in question is achieved. Meanwhile a central server tries to stitch-together the images for 3D reconstruction, determines coverage, and learns the RL model. This project has potential applications in mapping or surveying locations or objects, especially where human access is hard e.g. cell-tower inspection, bridge inspection, fast ground surveying. 
+This project is about using drones (small portable machines) to map an object, while working in coordination. Working together, reinforcement learning is used to autonomously instruct drones to prioritize areas unexplored by other drones. In this way, an even coverage of the object in question is achieved. Meanwhile a central server tries to stitch-together the images for 3D reconstruction, determines coverage, and learns the RL model. This project has potential applications in mapping or surveying locations or objects, especially where human access is hard e.g. cell-tower inspection, bridge inspection, fast ground surveying. 
 
 <b>Code Link:</b>    [github.com/AllenIverSunn/MARL_3d_recon](https://github.com/AllenIverSunn/MARL_3d_recon)
 
