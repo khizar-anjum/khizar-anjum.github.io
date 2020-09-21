@@ -4,9 +4,9 @@ subtitle: on the world wide web
 email: khizaranjum28 AT gmail 
 description: A place where I share myself with the world
 baseurl: "/" # the subpath of your site, e.g. /blog
-# url: "http://10.42.0.1:4000" # development url
+#url: "http://10.42.0.1:4000" # development url
 url: "https://khizar-anjum.github.io" # the base hostname & protocol for your site
-#host: "10.42.0.1"
+#host: "10.42.0.1" #development
 author: Khizar
 street_address: Greater New York City Area
 #city: Nashville
@@ -26,6 +26,7 @@ linkedin_url: https://www.linkedin.com/in/khizar-anjum
 pinterest_url:
 slack_url: 
 twitter_url: https://twitter.com/theselfishjeans
+kaggle_url: https://www.kaggle.com/khizaranjum
 
 # Build settings
 markdown: kramdown

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- Section -->
+<!-- Section 
 <section>
 	<header class="major">
 		<h2>Erat lacinia</h2>
@@ -38,8 +38,8 @@ layout: default
 		</article>
 	</div>
 </section>
-
-<!-- Section -->
+-->
+<!-- Section 
 <section>
 	<header class="major">
 		<h2>Ipsum sed dolor</h2>
@@ -95,3 +95,4 @@ layout: default
 		</article>
 	</div>
 </section>
+-->
