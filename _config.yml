@@ -34,6 +34,9 @@ google_analytics: UA-156338845-1
 # Build settings
 markdown: kramdown
 
+plugins:
+  - jekyll-sitemap
+
 collections:
   rcorner:
     output: true
