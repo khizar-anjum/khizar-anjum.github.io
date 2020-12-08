@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 			$('#main').html($(data).find('#main')); 	// Pull the post we want out of the .content class.
 															// If you change the class of the post container,
 															// you must change it here!!!
-			// _gaq.push(['_trackPageview', State.url]);	// This updates Google Analytics with a visit to the new page.
+			_gaq.push(['_trackPageview', State.url]);	// This updates Google Analytics with a visit to the new page.
 														// If you don't use Google Analytics, you can safety comment or
 														// remove that line.
 		});
