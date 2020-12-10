@@ -4073,8 +4073,10 @@
 	.urdu {
 		font-family: Nafees Web Naskh;
 		text-align: right;
-		font-size-adjust: 0.38;
 	}
+		p.urdu {
+			font-size: 135%;
+		}
 
 /* Resume Header */
 	#resume_main {
