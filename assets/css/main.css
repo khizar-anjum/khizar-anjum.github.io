@@ -3889,6 +3889,7 @@
 			display: block;
 			margin: 0 0 2em 4em;
 			width: 30%;
+			height: fit-content;
 		}
 
 			#banner .image img {
@@ -4069,6 +4070,11 @@
 			padding-top: 0;
 		}
 
+	.urdu {
+		font-family: Nafees Web Naskh;
+		text-align: right;
+		font-size-adjust: 0.38;
+	}
 
 /* Resume Header */
 	#resume_main {

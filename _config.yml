@@ -47,3 +47,9 @@ collections:
   gi:
     output: true
     permalink: /:collection/:path/
+  ur:
+    output: true
+    permalink: /:collection/:path/
+  pus:
+    output: true
+    permalink: /:collection/:path/
