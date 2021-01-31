@@ -43,8 +43,8 @@
             <h2>Newest Posts</h2>
           </header>
           <div class="mini-posts">
-            {% assign sorted_posts = site.gi | sort:"date" | reverse %}
-            {%for i in (0..0) %}
+            {% assign sorted_posts = site.projects | sort:"date" | reverse %}
+            {%for i in (0..1) %}
               {% assign post = sorted_posts[i] %}
               <article>
                 <a href="{{post.permalink}}" class="image"><img src="{{post.poster}}" alt="" /></a>

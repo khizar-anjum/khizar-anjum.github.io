@@ -36,6 +36,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-sitemap
+  - jekyll-katex
 
 collections:
   rcorner:

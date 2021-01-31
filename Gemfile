@@ -3,4 +3,5 @@ gem 'guard'
 gem 'guard-jekyll-plus'
 gem 'guard-livereload'
 gem 'jekyll-sitemap'
+gem 'jekyll-katex'
 gemspec
