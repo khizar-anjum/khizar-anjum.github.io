@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Generating Severity-conditioned Knee Osteoarthritis X-rays - Khizar Anjum</title>
+
+    <meta name="author" content="Khizar Anjum">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:100%;vertical-align:middle">
+                <h1>Generating Severity-conditioned Knee Osteoarthritis X-rays Using Diffusion Neural Networks</h1>
+                <p>
+                  A deep learning project focused on generating synthetic knee X-ray images with controlled osteoarthritis severity using diffusion models.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:100%;vertical-align:middle">
+                <img src="../assets/images/knee-oa-gen.png" width="100%" style="max-width:100%">
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:100%;vertical-align:middle">
+                <h2>Resources</h2>
+                <ul>
+                  <li><a href="https://github.com/khizar-anjum/KneeOAGen">GitHub Repository</a></li>
+                  <li><a href="https://github.com/khizar-anjum/KneeOAGen/blob/main/technical_report.pdf?raw=true">Technical Report</a></li>
+                  <li><a href="https://drive.google.com/file/d/1I0nHw2Vi-gVkUmYXtl5AYUdf9zD9ABxK/view?usp=sharing">Pre-trained Model Weights</a></li>
+                </ul>
+                
+                <h2>Overview</h2>
+                <p>
+                  This project presents an implementation and evaluation of diffusion neural networks for generating synthetic knee X-ray images. We explore both unconditional and conditional variants of Denoising Diffusion Probabilistic Models (DDPMs), with a focus on generating images across different osteoarthritis severity levels. Our conditional DDPM architecture enables controlled image generation based on Kellgren-Lawrence (KL) grades by incorporating severity information into the diffusion process.
+                </p>
+                
+                <h2>Key Features</h2>
+                <ul>
+                  <li>Implementation of both unconditional and conditional DDPM models for knee X-ray generation</li>
+                  <li>Controlled generation based on Kellgren-Lawrence (KL) grades (0-4)</li>
+                  <li>High-fidelity synthetic images capturing grade-specific characteristics</li>
+                  <li>Quantitative evaluation using FID and Inception Score metrics</li>
+                  <li>Comprehensive model architecture with U-Net backbone</li>
+                  <li>Pre-trained model weights available for verification</li>
+                </ul>
+                
+                <h2>Technical Details</h2>
+                <h3>Model Architecture</h3>
+                <p>
+                  The model uses a U-Net architecture with:
+                </p>
+                <ul>
+                  <li>ResNet blocks with group normalization and SiLU activation</li>
+                  <li>Self-attention blocks for spatial attention</li>
+                  <li>Symmetric encoder-decoder paths with skip connections</li>
+                  <li>Learnable embedding layer for class conditioning</li>
+                  <li>Progressive spatial dimension reduction and channel depth increase</li>
+                </ul>
+                
+                <h3>Results</h3>
+                <p>
+                  <strong>Unconditional Model:</strong>
+                </p>
+                <ul>
+                  <li>FID Score: 85.41</li>
+                  <li>Inception Score: 1.03</li>
+                </ul>
+                
+                <p>
+                  <strong>Conditional Model (by KL Grade):</strong>
+                </p>
+                <ul>
+                  <li>Grade 0: FID 177.82, IS 1.56</li>
+                  <li>Grade 1: FID 173.35, IS 1.50</li>
+                  <li>Grade 2: FID 181.05, IS 1.52</li>
+                  <li>Grade 3: FID 182.03, IS 1.57</li>
+                  <li>Grade 4: FID 220.93, IS 1.57</li>
+                </ul>
+                
+                <h2>Impact</h2>
+                <p>
+                  This work addresses two critical needs in medical imaging:
+                </p>
+                <ol>
+                  <li>Augmenting training data for classification models by generating synthetic but realistic knee X-rays</li>
+                  <li>Creating a conditioned dataset to help train medical students and physicians by providing diverse examples across different severity grades</li>
+                </ol>
+                
+                <h2>Citation</h2>
+                <p>
+                  If you use this work in your research, please cite:
+                </p>
+                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+                  @techreport{anjum2025generating,<br>
+                  &nbsp;&nbsp;title={Generating Severity-conditioned Knee Osteoarthritis X-rays Using Diffusion Neural Networks},<br>
+                  &nbsp;&nbsp;author={Anjum, Khizar},<br>
+                  &nbsp;&nbsp;institution={Rutgers University},<br>
+                  &nbsp;&nbsp;year={2025},<br>
+                  &nbsp;&nbsp;url={https://github.com/khizar-anjum/KneeOAGen/blob/main/technical_report.pdf}<br>
+                  }
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <div class="site-nav">
+            <a href="../index.html">Home</a> &nbsp;/&nbsp;
+            <a href="../projects.html">Projects</a> &nbsp;/&nbsp;
+            <a href="../blog.html">Blog</a>
+          </div>
+          
+          <div class="site-footer">
+            <p>© 2023 Khizar Anjum - Greater New York City Area, United States of America</p>
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html> 

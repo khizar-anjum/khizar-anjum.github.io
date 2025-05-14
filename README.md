@@ -1,87 +1,56 @@
-# (WIP) Editorial - Jekyll Theme
+# Khizar Anjum - Personal Website
 
-A Jekyll version of the "Editorial" theme by [HTML5 UP](https://html5up.net/).
+This repository contains the source code for my personal website showcasing my research, projects, and blog.
 
-![Editorial Theme](assets/images/screenshot.jpg "Editorial Theme")
+NOTE: This website is a fork of [Jon Barron's website](https://jonbarron.info/).
 
-# How to Use
+## Website Structure
 
-For those unfamiliar with how Jekyll works, check out [https://jekyllrb.com/](https://jekyllrb.com/) for all the details,
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-and [creating pages](https://jekyllrb.com/docs/pages/).
+The website is built using pure HTML and CSS with no framework dependencies. The site includes:
 
-- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!
-- **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file!
+- **Homepage**: Introduction and links to my professional profiles
+- **Projects**: A collection of my academic and personal projects
+- **Blog**: Articles and posts about topics I find interesting
 
-# Added Features
-
-* Add your **social profiles** easily in `_config.yml`.
-
-# Configuration
-
-You can use the following custom parameters in `_config.yml`.
-
-## Site
-- `subtitle` sets the text for the lighter colored text next to your site's title.
-
-## Social
-- `500px_url`
-- `facebook_url`
-- `github_url`
-- `gitlab_url`
-- `googleplus_url`
-- `instagram_url`
-- `linkedin_url`
-- `pinterest_url`
-- `slack_url`
-- `twitter_url`
-
-# Issues
-
-If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/editorial-jekyll-theme) and I will be more than happy to help!
-
-Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/editorial-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/editorial-jekyll-theme@incoming.gitlab.com).
-
-The GitHub repository is simply a mirror of the GitLab repository.
-
-# Credits
-
-Original README from HTML5 UP:
+## Directory Structure
 
 ```
-Editorial by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-
-Say hello to Editorial, a blog/magazine-ish template built around a toggleable "locking"
-sidebar (scroll down to see what I mean) and an accordion-style menu. Not the usual landing
-page/portfolio affair you'd expect to see at HTML5 UP, but I figured for my 41st (!!!)
-template I'd change it up a little. Enjoy :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+khizar-anjum.github.io/
+├── assets/          # All static assets
+│   ├── css/         # Additional CSS files
+│   ├── images/      # Images used throughout the site
+│   └── js/          # JavaScript files
+├── projects/        # Individual project pages
+├── blog/            # Individual blog pages
+├── css/             # Main CSS files 
+├── index.html       # Homepage
+├── projects.html    # Projects listing page
+└── blog.html        # Blog listing page
 ```
 
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+## How to Update
+
+To update the site:
+
+1. Edit the HTML files directly to update content
+2. Add new project pages to the `projects/` directory, maintaining the same HTML structure
+3. Add new blog posts to the `blog/` directory
+4. Update the listing pages (`projects.html`, `blog.html`) to include links to new content
+
+## Local Development
+
+To run the site locally:
+
+1. Clone this repository
+2. Open the HTML files in a web browser directly or use a local server
+   - Python simple server: `python -m http.server`
+   - Node.js: Use packages like `serve` or `http-server`
+
+## Credits
+
+- Original design inspired by [HTML5 UP](https://html5up.net/)
+- Icons from [Font Awesome](https://fontawesome.com/)
+
+## License
+
+This site is licensed under the terms of the license included in the [LICENSE.md](LICENSE.md) file.
