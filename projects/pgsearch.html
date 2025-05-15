@@ -29,7 +29,7 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:100%;vertical-align:middle">
-                <img src="../assets/images/graph_poster.png" width="100%" style="max-width:100%">
+                <img src="../assets/images/graph_poster.png" width="100%" style="max-width:100%" onerror="this.src='../assets/images/image-not-found.png'">
               </td>
             </tr>
           </tbody></table>
@@ -51,7 +51,7 @@
                   A graph is a data-structure consisting of vertices and edges. The vertices are connected using edges which can either be directed or undirected; or weighted or un-weighted. Such a data structure can be used to model a wide variety of real-world phenomenon. For example, it can model a country's road network and find the optimal routing path between two cities (or vertices) using roads (edges). Or you can do social-network analysis with connections (edges) between people (vertices).
                 </p>
                 
-                <img src="../assets/images/simplegraph.jpg" style="width:100%; max-width:500px; display:block; margin:20px auto;">
+                <img src="../assets/images/simplegraph.jpg" width="100%" style="max-width: 500px; display: block; margin: 20px auto;" onerror="this.src='../assets/images/image-not-found.png'">
                 
                 <p>
                   Irrespective of application, graph search algorithms are important as they let us use graphs to find optimal route, to avoid obstacles or find the degrees of separation. The relevance of graph search algorithms for graphs warrants an investment into exploration of their parallelized versions. We do an in-depth analysis of their parallelization and test our predictions using CUDA.
@@ -152,7 +152,7 @@ while(all queues not empty):
                   We implemented a very GPU-friendly graph datastructure which is inspired from adjacency list, but represents any graph using only 4 integer arrays. The 4 integer arrays are easily copied onto GPU as well and provide O(1) accesses to each vertex, edge and weight in the graph. Internally, the API uses a 0-based naming integer convention for vertices, which are also used as indices for different arrays. The representation of a simple graph is shown below to facilitate understanding:
                 </p>
                 
-                <img src="../assets/images/graph_api.jpg" style="width:100%; max-width:500px; display:block; margin:20px auto;">
+                <img src="../assets/images/graph_api.jpg" width="100%" style="max-width: 700px; display: block; margin: 20px auto;" onerror="this.src='../assets/images/image-not-found.png'">
                 
                 <p>
                   In the figure, the internal representation of the graph on the left is shown. The maps convert the vertices into 0-based indexing first. Then 4 arrays keep the track of all vertices and edges and weights. The arrows show a very simple lookup of the number of edges emanating from vertex B and their weights. In order to do that, we first convert use the mapping B→1 and consult the values of index_arr and num_connected at index 1, which are 1 and 2 respectively. 1 from index_arr tells us that edges emanating from B could be found starting at index 1 in connected_to array, while 2 from num_connected tells us that there are 2 edges emanating from B. So, we go to index 1 at both connected_to and weight_arr and look for 2 consecutive elements. connected_to tells us the ending points of those edges, which are 0 and 2, meaning A and C, while weight_arr gives us the weights of those edges: 9 and 1 respectively.
@@ -168,23 +168,23 @@ while(all queues not empty):
                 </p>
                 
                 <div style="display:flex; justify-content:space-between; margin:20px 0;">
-                  <img src="../assets/images/intel_sequential.png" style="width:48%; max-width:400px;">
-                  <img src="../assets/images/ryzen_sequential.png" style="width:48%; max-width:400px;">
+                  <img src="../assets/images/intel_sequential.png" style="width:48%; max-width:400px;" onerror="this.src='../assets/images/image-not-found.png'">
+                  <img src="../assets/images/ryzen_sequential.png" style="width:48%; max-width:400px;" onerror="this.src='../assets/images/image-not-found.png'">
                 </div>
                 
                 <p>
                   Now, we present the results for the GPU execution of these algorithms depending on the threads considered. We have used the graph with 3783 edges for this graph. Here we see that after a certain point, adding more threads for the execution does not lead to appreciable increase but on the other hand, it leads to increased overhead and may even increase the execution time.
                 </p>
                 
-                <img src="../assets/images/numthreadscomp.png" style="width:100%; max-width:700px; display:block; margin:20px auto;">
+                <img src="../assets/images/numthreadscomp.png" width="100%" style="max-width: 500px; display: block; margin: 20px auto;" onerror="this.src='../assets/images/image-not-found.png'">
                 
                 <p>
                   Now, we can examine the parallel performance of the Dijkstra depending on the number of parallel queues we use. The graphs are shown below and we see a similar phenomenon here that increasing the queues beyond a certain point leads to increase in execution time because of the increase in overhead.
                 </p>
                 
                 <div style="display:flex; justify-content:space-between; margin:20px 0;">
-                  <img src="../assets/images/rtx2070comp.png" style="width:48%; max-width:400px;">
-                  <img src="../assets/images/gtx1070comp.png" style="width:48%; max-width:400px;">
+                  <img src="../assets/images/rtx2070comp.png" style="width:48%; max-width:400px;" onerror="this.src='../assets/images/image-not-found.png'">
+                  <img src="../assets/images/gtx1070comp.png" style="width:48%; max-width:400px;" onerror="this.src='../assets/images/image-not-found.png'">
                 </div>
                 
                 <p>
